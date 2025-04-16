@@ -75,6 +75,210 @@ body {
     color: aqua;
 }
 
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .navbar {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: #081b29;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 40px 0;
+        gap: 30px;
+        overflow-y: auto;
+    }
+    
+    .navbar.active {
+        left: 0;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1c2e3b;
+}
+
+.footer-p{
+    color: #fff;
+}
+.follow-on {
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.follow-on a {
+    color: #c7db78;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.follow-on a:hover {
+    text-decoration: underline;
+}
+
+/* Base responsive adjustments */
+@media (max-width: 1200px) {
+  .home-content h1 {
+    font-size: 48px;
+  }
+  
+  .skills-row {
+    gap: 10rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 15px;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    background: #081b29;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    transition: left 0.3s ease;
+  }
+  
+  .navbar.active {
+    left: 0;
+  }
+  
+  .home {
+    padding: 0 5%;
+  }
+  
+  .home-content h1 {
+    font-size: 36px;
+  }
+  
+  .home-content h3 {
+    font-size: 24px;
+  }
+  
+  .about-container {
+    flex-direction: column;
+  }
+  
+  .skills-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .skills-column {
+    min-width: 100%;
+  }
+  
+  .contact-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content h1 {
+    font-size: 32px;
+  }
+  
+  .btn-box {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+  
+  .btn-box a {
+    width: 100%;
+  }
+  
+  #search {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .education-content, .skills-box {
+    padding: 15px;
+  }
+  
+  .contact-form .form-group input,
+  .contact-form .form-group textarea {
+    padding: 10px;
+  }
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+}
+
 /* Home Section */
 .home {
     height: 100vh;
@@ -83,7 +287,7 @@ body {
     display: flex;
     align-items: center;
     padding: 0 10%;
-    background: url(home3.png) no-repeat;
+    background: url('../images/home3.png') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -429,16 +633,6 @@ body {
     background: linear-gradient(90deg, #1e90ff, #87cefa);
     border-radius: 6px;
 }
-
-/* Skill bar percentages */
-.skills-content .progress:nth-child(1) .bar span { width: 85%; }
-.skills-content .progress:nth-child(2) .bar span { width: 60%; }
-.skills-content .progress:nth-child(3) .bar span { width: 70%; }
-.skills-content .progress:nth-child(4) .bar span { width: 65%; }
-.skills-content .progress:nth-child(5) .bar span { width: 87%; }
-.skills-content .progress:nth-child(6) .bar span { width: 75%; }
-.skills-content .progress:nth-child(7) .bar span { width: 30%; }
-.skills-content .progress:nth-child(8) .bar span { width: 78%; }
 
 /* Contact Section */
 .contact {
